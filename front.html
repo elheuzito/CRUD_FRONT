@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Product CRUD</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="header">
+      <h3>Dashboard</h3>
+    </div>
+  
+
+  <form id="add-product-form">
+    <h3>Adicionar produto</h3>
+    <label for="name">Nome:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="price">Preço:</label>
+    <input type="number" id="price" name="price" required step="0.01">
+    <button type="submit">Add</button>
+  </form>
+  <h3 class="header_p">Produtos</h3>
+  <ul id="products"></ul>
+
+  <h3>Atualizar Registro</h3>
+<div class="update">
+  <form id="updateForm">
+    <label for="update-id">Id:</label>
+    <input type="number" id="update-id" name="update-id" required>
+
+    <label for="update-name">Nome:</label>
+    <input type="text" id="update-name" name="update-name" required>
+
+    <label for="update-price">Preço:</label>
+    <input type="number" id="update-price" name="update-price" required>
+
+    <button type="submit">Atualizar</button>
+  </form>
+</div>   
+</div>
+
+  <script src="app.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js">
+    const updateIdElement = document.getElementById('update-id');
+    const id = updateIdElement ? parseInt(updateIdElement.value) : null;
+    const updateNameElement = document.getElementById('update-name');
+    const name = updateNameElement ? parseInt(updateNameElement.value) : null;
+    const updatePriceElement = document.getElementById('update-price');
+    const price = updatePriceElement ? parseInt(updatePriceElement.value) : null;
+
+    if (id !== null) {
+  // Faça o que precisa ser feito com o ID
+      } else {
+      console.error("Elemento 'update-id' não encontrado.");
+      }
+    window.addEventListener('load', fetchProducts);
+  </script>
+</body>
+</html>
